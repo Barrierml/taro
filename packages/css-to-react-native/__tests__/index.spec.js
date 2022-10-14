@@ -1289,7 +1289,7 @@ describe('line-height', () => {
     ).toEqual({
       __viewportUnits: true,
       test: {
-        lineHeight: '2vh'
+        lineHeight: "scaleVu2dp(2, 'vh')"
       }
     })
   })
@@ -2629,16 +2629,16 @@ describe('viewport units', () => {
     ).toEqual({
       __viewportUnits: true,
       test: {
-        fontSize: '1vw',
-        lineHeight: '2vh',
-        marginBottom: '1vmin',
-        marginLeft: '1vmin',
-        marginRight: '1vmin',
-        marginTop: '1vmin',
-        paddingBottom: '1vmax',
-        paddingLeft: '1vmax',
-        paddingRight: '1vmax',
-        paddingTop: '1vmax'
+        fontSize: "scaleVu2dp(1, 'vw')",
+        lineHeight: "scaleVu2dp(2, 'vh')",
+        marginBottom: "scaleVu2dp(1, 'vmin')",
+        marginLeft: "scaleVu2dp(1, 'vmin')",
+        marginRight: "scaleVu2dp(1, 'vmin')",
+        marginTop: "scaleVu2dp(1, 'vmin')",
+        paddingBottom: "scaleVu2dp(1, 'vmax')",
+        paddingLeft: "scaleVu2dp(1, 'vmax')",
+        paddingRight: "scaleVu2dp(1, 'vmax')",
+        paddingTop: "scaleVu2dp(1, 'vmax')"
       }
     })
   })
@@ -3525,22 +3525,22 @@ describe('ICSS :export pseudo-selector', () => {
     ).toEqual({
       top: {
         borderTopWidth: 1,
-        borderTopStyle: 'solid',
+        borderStyle: 'solid',
         borderTopColor: 'red'
       },
       right: {
         borderRightWidth: 1,
-        borderRightStyle: 'solid',
+        borderStyle: 'solid',
         borderRightColor: 'red'
       },
       bottom: {
         borderBottomWidth: 1,
-        borderBottomStyle: 'solid',
+        borderStyle: 'solid',
         borderBottomColor: 'red'
       },
       left: {
         borderLeftWidth: 1,
-        borderLeftStyle: 'solid',
+        borderStyle: 'solid',
         borderLeftColor: 'red'
       }
     })

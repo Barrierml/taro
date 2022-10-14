@@ -1,7 +1,8 @@
-import * as fs from 'fs-extra'
-import * as path from 'path'
-import * as minimist from 'minimist'
 import { Kernel } from '@tarojs/service'
+import * as fs from 'fs-extra'
+import * as minimist from 'minimist'
+import * as path from 'path'
+
 import customCommand from './commands/customCommand'
 import { getPkgVersion } from './util'
 
@@ -115,6 +116,9 @@ export default class CLI {
             plugin = args.plugin
             platform = 'plugin'
             kernel.optsPlugins.push(path.resolve(platformsPath, 'plugin.js'))
+            if (plugin === 'weapp' || plugin === 'alipay') {
+              kernel.optsPlugins.push(`@tarojs/plugin-platform-${plugin}`)
+            }
           }
 
           // 传递 inspect 参数即可
